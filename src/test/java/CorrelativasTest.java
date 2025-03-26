@@ -60,4 +60,18 @@ public class CorrelativasTest {
         assertFalse(noLeAceptanLaInscripcion);
     }
 
+    @Test
+    public void dadoUnaInscripcionConUnAlumnoNulo_EntoncesSeLanzaUnaExcepcion() {
+        // Arrange
+        Alumno alumno = null;
+        Set<Materia> materias = new HashSet<>();
+
+        // Act & Assert
+        try {
+            new Inscripcion(alumno, materias);
+        } catch (IllegalArgumentException e) {
+            assertTrue(e.getMessage().contains("El alumno no puede ser nulo"));
+        }
+    }
+
 }

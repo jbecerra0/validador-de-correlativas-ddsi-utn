@@ -7,6 +7,10 @@ public class Inscripcion {
     private final Set<Materia> materias;
 
     public Inscripcion(Alumno alumno, Set<Materia> materias) {
+        if (alumno == null) {
+            throw new IllegalArgumentException("El alumno no puede ser nulo");
+        }
+
         this.alumno = alumno;
         this.materias = materias;
     }
