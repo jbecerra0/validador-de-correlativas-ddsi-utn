@@ -14,13 +14,13 @@ public class CorrelativasTest {
     @Test
     public void dadoUnAlumnoUnasMateriasYUnaInscripcion_CuandoElAlumnoTieneAprobadasLasCorrelativasDeLasMateriasDeLaInscripcion_EntoncesLeAceptanLaInscripcion() {
         // Arrange
-        Alumno alumno = new Alumno("Juan", "Perez", new HashSet<>(), new HashSet<>());
+        Alumno alumno = new Alumno("Juan", "Perez");
 
-        Materia am1 = new Materia("Analisis Matematico I", new HashSet<>());
-        Materia aga = new Materia("Algebra y Geometria Analitica", new HashSet<>());
+        Materia am1 = new Materia("Analisis Matematico I");
+        Materia aga = new Materia("Algebra y Geometria Analitica");
 
         Materia am2 = new Materia("Analisis Matematico II", Set.of(am1, aga));
-        Materia f1 = new Materia("Fisica I", new HashSet<>());
+        Materia f1 = new Materia("Fisica I");
 
         alumno.agregarMateriaAprobada(am1);
         alumno.agregarMateriaAprobada(aga);
@@ -39,13 +39,13 @@ public class CorrelativasTest {
     @Test
     public void dadoUnAlumnoUnasMateriasYUnaInscripcion_CuandoElAlumnoNoTieneAprobadasUnaDeLasCorrelativasDeLaMateriaDeLaInscripcion_EntoncesNoLeAceptanLaInscripcion() {
         // Arrange
-        Alumno alumno = new Alumno("Juan", "Perez", new HashSet<>(), new HashSet<>());
+        Alumno alumno = new Alumno("Juan", "Perez");
 
-        Materia am1 = new Materia("Analisis Matematico I", new HashSet<>());
-        Materia aga = new Materia("Algebra y Geometria Analitica", new HashSet<>());
+        Materia am1 = new Materia("Analisis Matematico I");
+        Materia aga = new Materia("Algebra y Geometria Analitica");
 
         Materia am2 = new Materia("Analisis Matematico II", Set.of(am1, aga));
-        Materia f1 = new Materia("Fisica I", new HashSet<>());
+        Materia f1 = new Materia("Fisica I");
 
         alumno.agregarMateriaAprobada(am1);
 
@@ -64,11 +64,10 @@ public class CorrelativasTest {
     public void dadoUnaInscripcionConUnAlumnoNulo_EntoncesSeLanzaUnaExcepcion() {
         // Arrange
         Alumno alumno = null;
-        Set<Materia> materias = new HashSet<>();
 
         // Act & Assert
         try {
-            new Inscripcion(alumno, materias);
+            new Inscripcion(alumno);
         } catch (IllegalArgumentException e) {
             assertTrue(e.getMessage().contains("El alumno no puede ser nulo"));
         }
