@@ -6,8 +6,7 @@ class Alumno
 
 Materia --> "*" Materia
 
-Inscripcion --> Alumno
-'Inscripcion -* Alumno
+Inscripcion -* Alumno
 Inscripcion --> "*" Materia
 
 Alumno --> "*" Materia
