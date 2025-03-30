@@ -1,11 +1,16 @@
-package org.example;
+package org.domain;
+
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.HashSet;
 import java.util.Set;
 
+@Getter
+@Setter
 public class Inscripcion {
-    private final Alumno alumno;
-    private final Set<Materia> materias;
+    private Alumno alumno;
+    private Set<Materia> materias;
 
     public Inscripcion(Alumno alumno) {
         if (alumno == null) {

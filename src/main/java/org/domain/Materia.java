@@ -1,11 +1,16 @@
-package org.example;
+package org.domain;
+
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.HashSet;
 import java.util.Set;
 
+@Getter
+@Setter
 public class Materia {
-    private final String nombre;
-    private final Set<Materia> correlativas;
+    private String nombre;
+    private Set<Materia> correlativas;
 
     public Materia(String nombre) {
         this.nombre = nombre;
@@ -13,12 +18,11 @@ public class Materia {
     }
 
     public Materia(String nombre, Set<Materia> correlativas) {
-        this.nombre = nombre;
-
         if (correlativas == null) {
             throw new IllegalArgumentException("Correlativas no puede ser nulo");
         }
 
+        this.nombre = nombre;
         this.correlativas = correlativas;
     }
 

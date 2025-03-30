@@ -1,13 +1,18 @@
-package org.example;
+package org.domain;
+
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.HashSet;
 import java.util.Set;
 
+@Getter
+@Setter
 public class Alumno {
-    private final String nombre;
-    private final String apellido;
-    private final Set<Materia> materiasAprobadas;
-    private final Set<Inscripcion> inscripciones;
+    private String nombre;
+    private String apellido;
+    private Set<Materia> materiasAprobadas;
+    private Set<Inscripcion> inscripciones;
 
     public Alumno(String nombre, String apellido) {
         this.nombre = nombre;
@@ -17,9 +22,6 @@ public class Alumno {
     }
 
     public Alumno(String nombre, String apellido, Set<Materia> materiasAprobadas, Set<Inscripcion> inscripciones) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-
         if (materiasAprobadas == null) {
             throw new IllegalArgumentException("Las materias no pueden ser nulas");
         }
@@ -28,6 +30,8 @@ public class Alumno {
             throw new IllegalArgumentException("Las inscripciones no pueden ser nulas");
         }
 
+        this.nombre = nombre;
+        this.apellido = apellido;
         this.materiasAprobadas = materiasAprobadas;
         this.inscripciones = inscripciones;
     }
