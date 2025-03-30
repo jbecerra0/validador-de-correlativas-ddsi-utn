@@ -1,3 +1,5 @@
+package domain;
+
 import org.domain.Alumno;
 import org.domain.Materia;
 import org.junit.jupiter.api.Assertions;

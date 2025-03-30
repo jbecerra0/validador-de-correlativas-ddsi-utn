@@ -1,3 +1,5 @@
+package domain;
+
 import org.domain.Alumno;
 import org.domain.Inscripcion;
 import org.domain.Materia;
