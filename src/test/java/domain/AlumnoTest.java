@@ -47,6 +47,7 @@ public class AlumnoTest {
     }
 
     @Test
+    @DisplayName("Se agrega al alumno una nueva materia aprobada")
     public void aproboMateria() {
         Alumno alumno = new Alumno("Juan", "Perez");
         Materia am1 = new Materia("Analisis Matematico I");
